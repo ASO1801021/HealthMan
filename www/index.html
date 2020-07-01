@@ -93,7 +93,19 @@
 
 <!--中身-->
 <body>
-  <ons-navigator id="navigator" page="home.html"></ons-navigator>
+  <ons-navigator id="navigator" page="common.html"></ons-navigator>
+
+
+  <!-- 共通画面 -->
+  <ons-template id="common.html">
+    <ons-page id="common-page">
+      <ons-tabbar>
+        <ons-tab page="home.html" icon="md-home"></ons-tab>
+        <ons-tab page="schedule.html" icon="fa-calendar"></ons-tab>
+        <ons-button id="weight-button">ぼ</ons-button>
+      </ons-tabbar>
+    </ons-page>
+  </ons-template>
 
   <!--ホーム画面-->
   <ons-template id="home.html">
@@ -115,6 +127,7 @@
           <ons-button id="profile-button">プロフィール</ons-button>
         </p>
       </div>
+      
     </ons-page>
   </ons-template>
 
