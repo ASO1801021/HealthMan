@@ -46,10 +46,21 @@
 
       //スケジュールページの処理
       } else if (page.matches('#schedule-page')) {
-        //ホームボタン押下
-        page.querySelector('#home-button').onclick = function() {
-          document.querySelector('#navigator').popPage();
-        };
+        if (document.querySelector('#navigator').topPage.id == "common-page") {
+          // ons-tab→スケジュール
+          page.querySelector("ons-back-button").disconnectedCallback();
+          page.querySelector("ons-back-button").onclick = function () {
+            document.querySelector("ons-tab[page='home.html']").click();
+          };
+          page.querySelector('#home-button').onclick = function () {
+            document.querySelector("ons-tab[page='home.html']").click();
+          };
+        } else {
+          // ons-navigator→スケジュール
+          page.querySelector('#home-button').onclick = function() {
+            document.querySelector('#navigator').popPage();
+          };
+        }
 
       //目標ページの処理
       }else if(page.matches('#goal-page')){
